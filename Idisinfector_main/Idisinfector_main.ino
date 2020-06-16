@@ -19,16 +19,13 @@ void setup()
 
 void loop()
 {
-	Serial.print(analogRead(sensor0));
-	Serial.print("  ");
-	Serial.println(analogRead(sensor1));
-	delay(100);
+	delay(200);
 
 	if((analogRead(sensor0) <= 255 || analogRead(sensor1) <= 255) && flag == false)
 	{
 		delay(300);
 		analogWrite(actuator, 255);
-		delay(140);
+		delay(30);
 		analogWrite(actuator, 0);
 		flag = true;
 	}
